@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:location_app/screens/home.dart';
-import 'package:location_app/screens/mappage.dart';
+import 'package:location_app/screens/child/home.dart';
+import 'package:location_app/screens/child/mappage.dart';
 import 'package:location_app/services/determinepositon.dart';
 import 'package:provider/provider.dart';
 
