@@ -22,8 +22,6 @@ class _WrapperState extends State<Wrapper> {
   Widget build(BuildContext context) {
     final user = Provider.of<User?>(context);
     if (user == null) return const AuthPage();
-    // if (child == 1) return const ParentHome();
-    // if (child == 2) return const ChildHome();
-    return const HomePage();
+    return const MaterialApp(home: HomePage());
   }
 }
