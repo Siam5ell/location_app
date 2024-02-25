@@ -1,27 +1,21 @@
 import "package:flutter/material.dart";
 import "package:flutter_map/flutter_map.dart";
 import "package:latlong2/latlong.dart";
-import "package:location_app/services/determinepositon.dart";
-import "package:provider/provider.dart";
 import "package:url_launcher/url_launcher.dart";
 
-class MapPage extends StatefulWidget {
-  const MapPage({super.key});
+class MapPage extends StatelessWidget {
+  final double latitude;
+  final double longitude;
+  const MapPage({super.key, required this.latitude, required this.longitude});
 
-  @override
-  State<MapPage> createState() => _MapPageState();
-}
-
-class _MapPageState extends State<MapPage> {
   @override
   Widget build(BuildContext context) {
-    final locationTracker = Provider.of<LocationTracker>(context);
     return Scaffold(
-        appBar: AppBar(title: const Text("Map Page")),
+        appBar: AppBar(
+          title: const Text("Map Page"),
+        ),
         body: FlutterMap(
-            options: MapOptions(
-                initialCenter: LatLng(locationTracker.currlatitude,
-                    locationTracker.currlongitude)),
+            options: MapOptions(initialCenter: LatLng(latitude, longitude)),
             children: [
               TileLayer(
                 urlTemplate: 'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
@@ -38,8 +32,7 @@ class _MapPageState extends State<MapPage> {
               ),
               MarkerLayer(markers: [
                 Marker(
-                    point: LatLng(locationTracker.currlatitude,
-                        locationTracker.currlongitude),
+                    point: LatLng(latitude, longitude),
                     rotate: true,
                     alignment: Alignment.topCenter,
                     child: Icon(

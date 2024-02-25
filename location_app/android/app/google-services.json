@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "841010737348",
+    "project_id": "child-tracker-c23fd",
+    "storage_bucket": "child-tracker-c23fd.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:841010737348:android:ca9741864b17d833961991",
+        "android_client_info": {
+          "package_name": "com.example.location_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA_ZT8PMNoR2Qdb98briMr7PotwnqscqM8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
